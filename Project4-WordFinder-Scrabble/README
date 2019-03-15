@@ -1,0 +1,89 @@
+Name: Ishan Mohanty
+USC NetID: 4461-3447-18
+CS 455 PA4
+FALL 2018
+
+----------------------------------------------
+CERTIFY IT'S YOUR WORK
+
+"I certify that the work submitted for this assignment does not
+violate USC's student conduct code.  In particular, the work is my
+own, not a collaboration, and does not involve code created by other
+people, except for the the resources explicitly mentioned in the CS 455
+Course Syllabus.  And I did not share my solution or parts of it with
+other students in the course."
+
+Initial below to "sign" the above statement:
+I.M
+
+----------------------------------------------
+ACKNOWLEDGE ANY OUTSIDE SOURCES
+
+List here any code you submitted for this assignment that was written
+with significant help of a course staff member, or code used from the
+textbook.  Be specific about what methods or algorithms are involved,
+and what sections of the textbook are involved (if applicable): [you do
+not need to list any of the code that we wrote for the assignment,
+i.e., the contents of the starter files for the assignment]
+
+
+
+----------------------------------------------
+KNOWN BUGS or LIMITATIONS:
+
+
+
+----------------------------------------------
+DESCRIPTION OF YOUR CLASS DESIGN AND ALGORITHMS AND DATA STRUCTURES USED:
+
+Class Design:
+
+These are the following classes
+
+(i) WordFinder:
+
+The main method simulates the scrabble board game by the following procedure:
+1. Takes in dictionary or passes default dictionary "sowpods.txt" to the
+   AnagramDictionary class
+2. If the dictionary file is not found the exception is handled and application is exited.
+3. Processes the input rack by delegating control to the Rack class
+4. Generates subsets
+5. creates a scoretable for the different word-score pairs
+6. sorts the words accordingly to decreasing order of scores
+7. displays the word-score pair
+
+Static Inner Class wordScoreCompare is responsible for comparing the values of the scores of the respective words. It Implements the Comparator interface and overrides compare method.   
+
+Data Structures : ArrayList and Map
+
+(ii) AnagramDictionary
+
+Takes in the dictionary, if the dictionary is not found throws an exception which is handled in the
+main method. Maintains an anagram dictionary for each word and has a getter method to return the 
+anagram for each word.
+
+Data Structures used: ArrayList and Map
+
+(iii) Rack
+
+processes the input rack by removing any non-alphabets and generates all the subsets of the rack.
+these subsets are returned to the main function.
+
+Data Structures used: ArrayList and Map
+
+(iv) ScoreTable
+
+Creates a word-score pair table based on the hard-coded values each alphabet is designated according
+to the game. returns the word-score map for sorting in the main method by the inner class comparator.
+            
+Data Structures used: ArrayList and Map
+
+----------------------------------------------
+ANY OTHER NOTES FOR THE GRADER:
+
+
+
+
+
+
+

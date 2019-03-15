@@ -1,0 +1,146 @@
+Name: Ishan Mohanty   
+USC NetId: 4461-3447-18
+CSCI 455 PA1
+Fall 2018
+
+----------------------------------------------
+CERTIFY IT'S YOUR WORK
+
+"I certify that the work submitted for this assignment does not
+violate USC's student conduct code.  In particular, the work is my
+own, not a collaboration, and does not involve code created by other
+people, except for the the resources explicitly mentioned in the CS 455
+Course Syllabus.  And I did not share my solution or parts of it with
+other students in the course."
+
+Initial below to "sign" the above statement:
+
+I.M
+
+----------------------------------------------
+ACKNOWLEDGE ANY OUTSIDE SOURCES
+
+List here any code you submitted for this assignment that was written
+with significant help of a course staff member, or code used from the
+textbook.  Be specific about what methods or algorithms are involved,
+and what sections of the textbook are involved (if applicable): [you do
+not need to list any of the code that we wrote for the assignment,
+i.e., the contents of the starter files for the assignment]
+
+Reference/Sources:
+-------------------
+
+1. Hints on graphics programming - used this code in draw() method
+
+   String label = "Hello, world!";   // suppose this is the label you want to display
+   Font font = g2.getFont();
+   FontRenderContext context = g2.getFontRenderContext();
+   Rectangle2D labelBounds = font.getStringBounds(label, context);
+   int widthOfLabel = labelBounds.getWidth();
+   int heightOfLabel = labelBounds.getHeight();
+
+   Modified this code. line 4 in the above snippet.
+
+2. Chapter 2 & 3 : Sections - 2.9, 2.10, 3.8
+   Refered for graphics programming to implement some code in Bar.java, CoinSimViewer, CoinSimComponent.
+   Bar.java - draw() method
+   CoinSimViewer - Main() method - Creating JFrame and adding Component
+   CoinSimComponent - paintComponent() Method - understood how to construct bar dimensions and redirect to draw() method.
+
+
+3. https://javarevisited.blogspot.com/2017/01/how-to-convert-double-to-int-in-java.html
+   
+   the above link was used to understand typecasting for Math.round() as it returns long which i was assigning to int.
+   So the concept was used in the above reference.
+
+4. Starter files.
+
+
+----------------------------------------------
+KNOWN BUGS or LIMITATIONS:
+
+BUGS:
+
+1. There is 1 bug in the program, when we observe the probabilities, we see that in some minority cases we get the probabilities summing to  
+   around 101% or 99%. Even though numerically the sum of the number of HH, H & T & TT add up to the total number of trials, the division
+   resulting in the probability in some cases does not display exactly 100% and produces erroneus values such as 101% or 99%. only these 2 cases 
+   of 101% and 99% have been observed due to rounding errors from Math.round() function. 
+   
+   Case1. Ex for 101% rounding off mechanism: say HH : 25.5%, TT : 24.5% and H&T: 50%. by Math.round, this would be HH: 26%, TT:25% ad H&T: 50%
+          The sum of which is 101%.
+
+   Case2. Ex of 99% rounding off mechanism: say HH: 23.3%, TT: 26.3% and H&T: 50.4% then by Math.round, this would be HH: 23%, TT: 26% &
+          H&T: 50%, this would sum to 99%.
+
+   Therefore, these were observable in some cases.
+
+
+
+Limitations:
+
+1. Number of trials ( numTrials ) can have a maximum value of 2147483647 as it is an integer value, for the next integer the program crashes as 
+   there is an overflow issue. we could use the 'long' data type for the numTrials variable but in this program for the sake of simplicity we 
+   have avoided that use. 'long' data type has maximum value: 9,223,372,036,854,775,807.
+
+2. While resizing the java frame display, the vertical bars resize accordingly but the labels do not automatically resize. Instead they merge
+   with one another producing an ugly output as the frame becomes smaller.
+
+----------------------------------------------
+ANY OTHER NOTES FOR THE GRADER:
+
+For some reason when i indent the files present in the VNC desktop using VIM editor the indentation in the Vocareum page is compromised
+and vice versa. So i have indented only my Vocareum files which is more important for grading. Kindly take note of this while grading.
+
+----------------------------------------------
+ANSWERS TO ASSIGNMENT README QUESTIONS (if applicable):
+
+Q1. In CS 455 what code from the web are you allowed to use in your assignment solution, assuming you modify that code once you get it? (No clue? Hint: Reread the syllabus.) Note: no need to mention the "starter files" for the assignment in your answer. 
+
+Answer:
+
+we are not supposed to use any part of the code from the web be it a solution or adapted solution. We can only use code from the big java textbook and from the code shared by the faculty and teaching assistants.
+
+
+Q2. What is the probability of each of the three outcomes in a trial: two heads, one head and one tail, and two tails? Why is one of them
+   different than the other two? 
+
+Answer:
+
+In one trial, after performing the experiment, the probability of one of the three cases namely two heads, head & a tail and two tails is 100% as we can only get one of these 3 results. But before performing the experiment, we have 25% probability chance that it may ne two heads, 25% probability chance that it may be two tails and 50% chance that it may be a Head & a Tail (HT & TH - Same here), hence due to this initial probability we observe that after we have performed the experiment and see the results , a Head and Tail occurs most frequently and is therefore more different that two heads probability and two tails probability. Hence, the 50% chance that a Head and a tail has differentiates it from the 25% intial probability chance that two heads/ two tails has.
+
+
+Q3. Roughly how many trials do you need to do before you mostly get results within 1% of these probabilities? Do several simulations using your 
+   program to determine an answer to this. 
+
+Answer: 
+
+The strategy used in finding results within 1% of these probabilities are as follows:
+1. we try to get the probabilities in the range of 24~26% 49~51% 24~26% for two heads, a head and a tail and two tails.
+2. once, we get these probabilities for the first time, we test to see if this is true if we run the same number of trials for atleast 10 times.
+3. If step 3 does not satisfy then we move on to a new value for numTrials.
+   Based on above strategy, we found that the results start converging at numTrials = 1000 but are not stable. We continue increments of 500 
+   for the numTrials and see that we are able to get the most stable results at numTrials = 5000.
+   We see that this is in accordance with the law of large numbers which states as the number of experiments increases the average value of
+   the result of the experiment inches closer towards the expected theoretical value.
+   
+   Therefore, 5000 trials and above is needed to get results within 1% probabilities which are stable.
+
+
+Q4.Roughly how many trials can you do before it crashes with an overflow error? State the largest value you tried where it still worked correctly, and one where it overflowed. You can get an idea of what general values to try by looking at the limits on Java integers (see Section 4.1.1 of the text). Play around with your program to verify that it actually works for very large values that are within the limits. Note: this kind of testing can sometimes turn up bugs, so it's good to do. Warning: For very large values you may have to wait a fair amount of time before you get the results. 
+
+Answer:
+
+Number of trials we can perform successfully, before it crashes with an overflow error is : 2147483647 (largest int value)
+The number of trials after which the program crashes with an overflow error is : 2147483648 onwards ....
+
+Reason being the maximum value of an integer is 2147483647 and therefore in this case we use numTrials which is an integer variable.
+Hence, we face this issue.
+
+
+
+
+        
+
+
+
+

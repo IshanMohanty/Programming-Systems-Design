@@ -1,0 +1,56 @@
+Name: Ishan Mohanty
+USC NetID: 4461-3447-18
+CSCI 455 PA3
+Fall 2018
+
+----------------------------------------------
+CERTIFY IT'S YOUR WORK
+
+"I certify that the work submitted for this assignment does not
+violate USC's student conduct code.  In particular, the work is my
+own, not a collaboration, and does not involve code created by other
+people, except for the the resources explicitly mentioned in the CS 455
+Course Syllabus.  And I did not share my solution or parts of it with
+other students in the course."
+
+Initial below to "sign" the above statement:
+I.M
+
+----------------------------------------------
+ACKNOWLEDGE ANY OUTSIDE SOURCES
+
+List here any code you submitted for this assignment that was written
+with significant help of a course staff member, or code used from the
+textbook.  Be specific about what methods or algorithms are involved,
+and what sections of the textbook are involved (if applicable): [you do
+not need to list any of the code that we wrote for the assignment,
+i.e., the contents of the starter files for the assignment]
+
+
+1. Flood-Fill Algorithm for recursive uncovering of squares 
+   https://en.wikipedia.org/wiki/Flood_fill
+
+----------------------------------------------
+KNOWN BUGS or LIMITATIONS:
+
+In comparison to the web based game:
+
+1. Performance statistics like timing, number of clicks used to complete game and leader board data is not implemented for
+   the user to see.
+
+2. When we click on an uncovered square with an associated mine that is either satisfied properly or not, more squares are uncovered. 
+   if mine guess is placed correctly by the user next to the uncovered square, the click on the uncovered square opens up many other 
+   squares and forms a boundary till it encounters a mine. If the mine guess is incorrect, it forcibly opens up the exploded mine 
+   in the incorrect mine guess position when you click on the already uncovered mine.
+   This feature above is implemented only in the web-based game and is not handled in our game.
+   So when user clicks on an already covered square, nothing happens.
+
+----------------------------------------------
+ANY OTHER NOTES FOR THE GRADER:
+
+
+
+
+
+
+

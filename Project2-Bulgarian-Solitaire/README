@@ -1,0 +1,45 @@
+Name: Ishan Mohanty   
+USC NetID: 4461-3447-18 
+CSCI 455 PA2
+Fall 2018
+
+----------------------------------------------
+CERTIFY IT'S YOUR WORK
+
+"I certify that the work submitted for this assignment does not
+violate USC's student conduct code.  In particular, the work is my
+own, not a collaboration, and does not involve code created by other
+people, except for the the resources explicitly mentioned in the CS 455
+Course Syllabus.  And I did not share my solution or parts of it with
+other students in the course."
+
+Initial below to "sign" the above statement:
+I.M
+
+----------------------------------------------
+ACKNOWLEDGE ANY OUTSIDE SOURCES
+
+List here any code you submitted for this assignment that was written
+with significant help of a course staff member, or code used from the
+textbook.  Be specific about what methods or algorithms are involved,
+and what sections of the textbook are involved (if applicable): [you do
+not need to list any of the code that we wrote for the assignment,
+i.e., the contents of the starter files for the assignment]
+
+1.Using assert statements - Special topic 11.6 - textbook.
+2.Converting a String into an array of numbers - 11.2.5 - textbook. 
+
+----------------------------------------------
+KNOWN BUGS or LIMITATIONS:
+
+1.If CARD_TOTAL is not a triangular number, the game will not reach a stable configuration.
+
+----------------------------------------------
+ANY OTHER NOTES FOR THE GRADER:
+
+
+
+
+
+
+
